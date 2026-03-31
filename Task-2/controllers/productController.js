@@ -5,7 +5,7 @@ exports.getProducts=(req,res)=>{
 const mysql="SELECT * FROM products WHERE deleted_at is NULL "
 db.query(mysql,(err,result)=>{
 if(err){
-    return res.status(500).json({messag:err.message})
+    return res.status(500).json({message:err.message})
 }
 return res.status(200).json(result)
 })
@@ -60,6 +60,21 @@ if(result.affectedRows===0){
     return res.status(404).json({message:"product not found"})
 }
     return res.status(200).json({message:"product deleted successfully"})
+
+})
+},
+exports.restoreProduct=(req,res)=>{
+const {id}=req.params
+const mysql="UPDATE products SET deleted_at= NULL WHERE id=? AND deleted_at is NOT NULL"
+db.query(mysql,[id],(err,result)=>{
+if(err){
+     return res.status(500).json({message:err.message})
+}
+
+if(result.affectedRows===0){
+    return res.status(404).json({message:"product not found or cannot be restore"})
+}
+    return res.status(200).json({message:"product restore successfully"})
 
 })
 }
