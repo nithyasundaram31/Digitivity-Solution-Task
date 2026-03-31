@@ -16,14 +16,15 @@
 - DELETE /products/:id → Soft delete a product (set deleted_at)
 
 ## Environment Variables
-# Create .env file 
-env```
+## Create .env file 
+```env
 DB_HOST=your_db_host
 DB_USER=your_db_user
 DB_PASSWORD=your_mysql_password
 DB_NAME=your_db_name
 DB_PORT=your_db_port
 PORT=5000
+```
 
 ## Tech Stack
 - Node.js
