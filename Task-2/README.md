@@ -43,7 +43,7 @@ PORT=5000
 
 ### 1. Modify Table (deleted_at column)
 I added a `deleted_at` column in the products table to track when a product is deleted.
-![Soft Delete Example](./images/image1.png)
+(![Soft Delete Example](https://raw.githubusercontent.com/nithyasundaram31/Digitivity-Solution-Task/main/Task-2/images/image1.png))
 
 ### 2. Soft Delete (Implemented in Task 2)
 - In Task 2, instead of permanently deleting a product, I used soft delete.
